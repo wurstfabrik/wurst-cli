@@ -1,8 +1,7 @@
 # -- encoding: UTF-8 --
-from urllib.parse import urljoin
-
 from addict import Dict
 from requests import Session
+from six.moves.urllib.parse import urljoin
 
 
 class WurstSession(Session):
