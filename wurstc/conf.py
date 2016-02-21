@@ -42,6 +42,8 @@ class Config(object):
     To persist changes, call `.save()`.
     """
 
+    __wrapped__ = False  # This makes doctest behave with our top-level Addict object.
+
     def __init__(self, path, data=None):
         self._path = path
         self._data = (Dict(data) if data else None)
