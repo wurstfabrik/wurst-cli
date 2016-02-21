@@ -1,0 +1,20 @@
+sudo: false
+language: python
+cache:
+  directories:
+    - "$HOME/.cache/pip"
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+install:
+  - pip install -U pip
+  - pip install coveralls -r requirements.txt -r requirements-dev.txt
+script:
+  - flake8 wurstc
+  - isort -c -rc wurstc
+  - py.test -ra -vvv --doctest-modules --cov
+after_success:
+  - coveralls
+after_script:
+  - pydocstyle wurstc
