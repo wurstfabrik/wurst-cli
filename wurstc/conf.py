@@ -11,7 +11,8 @@ def _get_config_dir():
     Get the configuration root directory.
 
     See these URLs for reference:
-    * http://blogs.msdn.com/b/patricka/archive/2010/03/18/where-should-i-store-my-data-and-configuration-files-if-i-target-multiple-os-versions.aspx
+    * http://blogs.msdn.com/b/patricka/archive/2010/03/18/
+      where-should-i-store-my-data-and-configuration-files-if-i-target-multiple-os-versions.aspx
     * https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.8.html
 
     :return: A directory path, guaranteed to exist
@@ -41,6 +42,8 @@ class Config(object):
 
     To persist changes, call `.save()`.
     """
+
+    __wrapped__ = False  # This makes doctest behave with our top-level Addict object.
 
     def __init__(self, path, data=None):
         self._path = path

@@ -1,7 +1,7 @@
 import getpass
-from urllib.parse import urlparse
 
 import click
+from six.moves.urllib.parse import urlparse
 
 from wurstc.cli.utils import get_site_from_context, success
 from wurstc.conf import user_config
